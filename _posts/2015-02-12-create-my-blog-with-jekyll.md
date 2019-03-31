@@ -18,7 +18,7 @@ excerpt: Jekyll Github 搭建静态博客 blog 高浩阳 使用多说评论系�
 
 ## 搭建过程
 
-在jekyll的官网上 [http://jekyllrb.com/](http://jekyllrb.com/) 其实已经说得比较明白了，我在这里还是简单的说一下吧。我用的是Windows系统。    
+在jekyll的官网上 [https://jekyllrb.com/](https://jekyllrb.com/) 其实已经说得比较明白了，我在这里还是简单的说一下吧。我用的是Windows系统。    
 主要环节有：安装Ruby，安装RubyGems，安装jekyll，安装代码高亮插件，安装node.js
 
 ---
@@ -36,7 +36,7 @@ ruby官网下载安装：[https://www.ruby-lang.org/en/downloads/](https://www.r
 
 ### 安装RubyGems
 
-官网下载 [http://rubygems.org/pages/download](http://rubygems.org/pages/download) rubygems-2.4.5.zip   
+官网下载 [https://rubygems.org/pages/download](https://rubygems.org/pages/download) rubygems-2.4.5.zip   
 
 cd到RubyGems目录   
 
@@ -90,7 +90,7 @@ watch为了检测文件夹内的变化，即修改后不需要重新启动jekyll
 
 ![serve-sucess]({{"/css/pics/serve-sucess.png"}})
 
-访问 http://localhost:4000/   
+访问 https://localhost:4000/   
 
 ![browser]({{"/css/pics/browser.png"}})   
 
@@ -102,12 +102,12 @@ watch为了检测文件夹内的变化，即修改后不需要重新启动jekyll
 
 ##后续 
 
-*  整个安装过程参考了jekyll官网，注意jekyll还有一个简体中文官网，不过比较坑（我就被坑了），有些内容没有翻译过来，有可能会走弯路，建议如果想看中文的相关资料，也要中英对照着阅读。[jekyll中文网 http://jekyllcn.com](http://jekyllcn.com), [jekyll英文网 http://jekyllrb.com](http://jekyllrb.com)
+*  整个安装过程参考了jekyll官网，注意jekyll还有一个简体中文官网，不过比较坑（我就被坑了），有些内容没有翻译过来，有可能会走弯路，建议如果想看中文的相关资料，也要中英对照着阅读。[jekyll中文网 https://jekyllcn.com](https://jekyllcn.com), [jekyll英文网 https://jekyllrb.com](https://jekyllrb.com)
 *  jekyll中的css是用sass写的，当然直接在`_sass/_layout.scss`中添加css也是可以的。
-*  本文是用Markdown格式来写的，相关语法可参考： [Markdown 语法说明 (简体中文版) http://wowubuntu.com/markdown/](http://wowubuntu.com/markdown/)  
+*  本文是用Markdown格式来写的，相关语法可参考： [Markdown 语法说明 (简体中文版) https://wowubuntu.com/markdown/](https://wowubuntu.com/markdown/)  
 *  按照本文的说明搭建完博客后，用`github Pages`托管就可以看到了。注意，在github上面好像不支持rouge，所以要push到github上时，我将配置文件_config.yml中的代码高亮改变为`highlighter: pygments`就可以了
-*  博客默认是没有评论系统的，本文的评论系统使用了多说，详细安装办法可访问[多说官网 http://duoshuo.com/](http://duoshuo.com/)，当然也可以使用[搜狐畅言 http://changyan.sohu.com/](http://changyan.sohu.com/)作为评论系统。	
-*  也可以绑定自己的域名，如果没有域名，可以在[godaddy http://www.godaddy.com/](http://www.godaddy.com/)上将域名放入购物车等待降价，买之。
+*  博客默认是没有评论系统的，本文的评论系统使用了多说，详细安装办法可访问[多说官网 https://duoshuo.com/](https://duoshuo.com/)，当然也可以使用[搜狐畅言 https://changyan.sohu.com/](https://changyan.sohu.com/)作为评论系统。	
+*  也可以绑定自己的域名，如果没有域名，可以在[godaddy https://www.godaddy.com/](https://www.godaddy.com/)上将域名放入购物车等待降价，买之。
 *  祝各位新年快乐！
 
 ---
@@ -122,7 +122,7 @@ watch为了检测文件夹内的变化，即修改后不需要重新启动jekyll
 
 **解决方法：**
 
-在stackoverflow上又一个很好的解决方法。[hitimes require error when running jekyll serve on windows 8.1](http://stackoverflow.com/questions/28985481/hitimes-require-error-when-running-jekyll-serve-on-windows-8-1) 虽然上面的题主问的是 win 8.1 系统下的情况，但是同样适用于 win7。下面我简单翻译一下错误原因和解决方法。
+在stackoverflow上又一个很好的解决方法。[hitimes require error when running jekyll serve on windows 8.1](https://stackoverflow.com/questions/28985481/hitimes-require-error-when-running-jekyll-serve-on-windows-8-1) 虽然上面的题主问的是 win 8.1 系统下的情况，但是同样适用于 win7。下面我简单翻译一下错误原因和解决方法。
 
 > 可能是 Ruby 2.2 和 hitimes-1.2.2-x86-mingw32 中有一些 ABI 变化，少了一些相关的类库。
 > 

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux 各文件夹用途说明</title>
+  <link rel="stylesheet" href="../../../css/stackedit.io.style.css" />
+</head>
+
+<body class="stackedit">
+	<h2 align="center">Linux 各文件夹用途说明</h2>
+	<div class="stackedit__html">
+	<blockquote>
+		<p>其实我觉得如果了解 Windows 系统目录结构的话，Linux 应该很容易理解，可问题是我不理解啊~~(* ￣︿￣)，不过这个作为工作中的基础知识，还是需要储备一下，以下纯粹个人理解</p>
+	</blockquote>
+<p><strong>系统版本：</strong> CentOS 7.4<br>
+出于篇幅考虑，这里只看主要的前面两级目录并且删除了部分不必要的</p>
+<table bgcolor="#FCF8E3"><tbody><tr bgcolor="#FCF8E3"><td bgcolor="#FCF8E3" align="left">
+<pre bgcolor="#FCF8E3"><font color="#005FFF">/</font> 根就在这~~！
+├── <font color="#005FFF">boot</font> --------------- 内核及引导文件
+│   └── <font color="#005FFF">grub2</font>
+├── <font color="#005FFF">dev</font> ---------------- 各种硬件设备的映射文件，例如 CPU 的子文件夹下的序号对应的是第几个 CPU
+│   ├── <font color="#005FFF">cpu</font>
+├── <font color="#005FFF">etc</font> ---------------- 系统及软件安装后的配置文件大多默认存放在这下面
+│
+├── <font color="#005FFF">home</font> --------------- 存放了系统各个非 root 用户各自的数据，每个用户数据是相互不可见的
+│   └── <font color="#005FFF">wong</font> ----------- 例如这里是 wong 用户，打开终端是看到的 ‘~’ 目录就是这里了，不行可以用 pwd 命令看看
+│
+├── <font color="#005FFF">media</font> -------------- DVD 等一些媒体信息会挂在到这里
+│
+├── <font color="#005FFF">mnt</font> ---------------- 和 media 类似，也是用来挂载的，例如添加了一个硬盘，可以用 mount 命令来挂载
+│   └── <font color="#005FFF">hgfs</font>
+├── <font color="#005FFF">opt</font> ---------------- 暂时没用到过，貌似一些软件会自动选择安装在这里，相当于绿色版软件安装目录
+│   └── <font color="#005FFF">rh</font>
+├── <font color="#005FFF">proc</font> --------------- 这里都是内存的映射文件，所以大小都是 0，并且例如每次打开 diskstats 文件都会变
+│
+├── <font color="#005FFF">root</font> --------------- 和上面的 wong 类似，只不过由于 root 用户权限过高，不放在 home 目录下
+│
+├── <font color="#005FFF">run</font> ---------------- 顾名思义，存放各种运行时需要用到的文件，例如进程 id、文件锁等，重启会重新生成
+│
+├── <font color="green">sbin</font> -&gt; <font color="#005FFF">usr/sbin</font> --- system binary 的意思，存放一些系统级别的程序、命令、脚本等
+│
+├── <font color="#005FFF">srv</font> ---------------- service 的意思，用于对外提供服务，例如多用户文件共享、ftp等，但貌似到现在也不太会用╮(╯▽╰)╭
+│
+├── <font color="#005FFF">sys</font> ---------------- 和 proc 目录类似，也是映射一些运行时系统设备、核心等信息，例如 CPU 等
+│
+├── <span><font color="#000000">tmp</font></span> ---------------- 临时目录，不能放重要的文件，一不小心可能会被清掉
+│
+├── <font color="#005FFF">usr</font> ---------------- unix software resource 的意思
+│   ├── <font color="#005FFF">bin</font> ------------ 存放一些普通用户级别的命令
+│   ├── <font color="#005FFF">etc</font> ------------ 和上面的 etc 类似，只是这是用户级别的
+│   ├── <font color="#005FFF">games</font>
+│   ├── <font color="#005FFF">include</font> -------- 写过 C/C++ 的同学应该知道 include，这里面存放是一些软件开发及编译安装时需要用到的头文件
+│   ├── <font color="#005FFF">lib</font> ------------ 存放一些系统函数库
+│   ├── <font color="#005FFF">lib64</font> ---------- 存放一些 64 位的系统函数库
+│   ├── <font color="#005FFF">libexec</font> -------- 同样存放一些系统函数库、可执行文件等
+│   ├── <font color="#005FFF">local</font> ---------- 里面存放的东西竟然和 usr 目录非常像！看大家的建议是把软件安装在这里比较好管理，所以我也这么干了
+│   ├── <font color="#005FFF">sbin</font> ----------- 上面的 sbin 连接过来的目录就是这个
+│   ├── <font color="#005FFF">share</font> ---------- 存放一些不影响系统运行的公共信息，例如文档说明等
+│   ├── <font color="#005FFF">src</font> ------------ 听大家说源代码建议放这里︿(￣︶￣)︿
+│
+└── <font color="#005FFF">var</font> ---------------- variable 的意思，存放一些经常变动的数据，例如缓存，数据库数据等
+    ├── <font color="#005FFF">cache</font>
+    ├── <font color="#005FFF">crash</font>
+    ├── <font color="#005FFF">db</font>
+    ├── <font color="#005FFF">lib</font>
+    ├── <font color="#005FFF">local</font>
+    ├── <font color="green">lock</font> -&gt; <font color="#005FFF">../run/lock</font>
+    ├── <font color="#005FFF">log</font>
+    ├── <font color="green">mail</font> -&gt; <font color="#005FFF">spool/mail</font>
+    ├── <font color="#005FFF">preserve</font>
+    ├── <font color="green">run</font> -&gt; <font color="#005FFF">../run</font>
+    ├── <span><font color="#000000">tmp</font></span>
+</pre>
+</td></tr></tbody></table>
+<p>上面的树结构用到 tree 命令，如果有兴趣的话可以看看<br>
+安装：</p>
+<pre><code class="prism language-shell">yum <span class="token function">install</span> tree -y
+</code></pre>
+<p>执行：</p>
+<pre><code class="prism language-shell"><span class="token comment"># '/'    从根目录开始输出</span>
+<span class="token comment"># -d     只输出目录</span>
+<span class="token comment"># -L 2   限制目录层级</span>
+<span class="token comment"># -C     输出彩色字体</span>
+tree / -d -L 2 -C
+</code></pre>
+<hr>
+<p>下面是在学习查资料的时候摘抄下来的，更加详细和帮助理解，from《鸟哥的Linux私房菜》<br>
+<img src="../../../img/2019/05/Linux文件夹用途说明1.png" alt="Linux文件夹用途说明"><br>
+<img src="../../../img/2019/05/Linux 文件夹用途说明2.png" alt="Linux 文件夹用途说明"><br>
+<img src="../../../img/2019/05/Linux 文件夹用途说明3.png" alt="Linux 文件夹用途说明"><br>
+<img src="../../../img/2019/05/Linux 文件夹用途说明4.png" alt="Linux 文件夹用途说明"><br>
+<img src="../../../img/2019/05/Linux 文件夹用途说明5.png" alt="Linux 文件夹用途说明"><br>
+<img src="../../../img/2019/05/Linux 文件夹用途说明6.png" alt="Linux 文件夹用途说明"><br>
+<img src="../../../img/2019/05/Linux 文件夹用途说明7.png" alt="Linux 文件夹用途说明"><br>
+	以下截至不知道什么地方<br>
+<img src="../../../img/2019/05/Linux 文件夹用途说明8.png" alt="Linux 文件夹用途说明"><br>
+</div>
+</body>
+
+</html>

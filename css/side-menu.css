@@ -124,8 +124,7 @@ appears on the left side of the page.
     /*
     This styles the selected menu item `<li>`.
     */
-    #menu .pure-menu-selected,
-    #menu .pure-menu-heading {
+    #menu .pure-menu-selected {
         background: #1f8dd6;
     }
         /*
@@ -139,9 +138,13 @@ appears on the left side of the page.
     This styles the menu heading.
     */
     #menu .pure-menu-heading {
-        font-size: 110%;
+        font-size: 125%;
+        font-weight: 300;
+        letter-spacing: 0.1em;
         color: #fff;
-        margin: 0;
+        margin-top: 0;
+        padding: 0.5em 0.8em;
+        text-transform: uppercase;
     }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/

@@ -88,14 +88,6 @@ appears on the left side of the page.
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
-    /*
-    All anchors inside the menu should be styled like this.
-    */
-    #menu a {
-        color: #999;
-        border: none;
-        padding: 0.6em 0 0.6em 0.6em;
-    }
 
     /*
     Remove all background/borders, since we are applying them to #menu.
@@ -127,25 +119,69 @@ appears on the left side of the page.
     #menu .pure-menu-selected {
         background: #1f8dd6;
     }
-        /*
-        This styles a link within a selected menu item `<li>`.
-        */
-        #menu .pure-menu-selected a {
-            color: #fff;
-        }
+    
+    #menu .pure-menu-selected .count {
+        color: #fff;
+    }
+
+    #menu .pure-menu-link {
+        color: #fff;
+    }
 
     /*
     This styles the menu heading.
     */
     #menu .pure-menu-heading {
-        font-size: 125%;
+        font-size: 115%;
         font-weight: 300;
-        letter-spacing: 0.1em;
         color: #fff;
-        margin-top: 0;
-        padding: 0.5em 0.8em;
+        padding: 1em 0.5em;
         text-transform: uppercase;
     }
+    
+    #menu .pure-menu-title {
+        border-bottom: none;
+        font-size:120%;
+        font-weight: bold;
+        padding: 0.3em 0.4em;
+        color: #0077AA;
+        border-top: 1px solid #ddd;
+    }
+    
+.label-danger,
+.label-warning,
+.label-warm,
+.label-error,
+.label-normal,
+.label-success {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 0.5em;
+    border-radius: 3px;
+}
+.label-danger {
+    background: #FFFF00;
+}
+.label-warning {
+    background: #FFC94C;
+}
+.label-warm {
+    background: #ffc94c;
+}
+.label-error {
+    background: #FF0000;
+}
+.label-normal {
+    background: #5CB85C;
+}
+.label-success {
+    background: #40c365;
+}
+
+.count {
+	color: rgb(75, 113, 151);
+}
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
 
@@ -208,7 +244,6 @@ small screens.
 Hides the menu at `48em`, but modify this based on your app's needs.
 */
 @media (min-width: 48em) {
-
     .header,
     .content {
         padding-left: 2em;

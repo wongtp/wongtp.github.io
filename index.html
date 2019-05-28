@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wongtp blog</title>
-    
+    <script src="https://cdn.staticfile.org/angular.js/1.7.8/angular.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet" href="css/side-menu.css">
 </head>
-<body>
+<body ng-app="blogApp" ng-controller="blogCtrl">
     <div id="layout" class="pure-g">
         <!-- Menu toggle -->
         <a href="#menu" id="menuLink" class="menu-link">
@@ -34,8 +34,6 @@
             <div>
                 <!-- A wrapper for all the blog posts -->
                 <div class="posts">
-                    
-    
                     <!-- A single blog post -->
                     <section class="post">
                         <header class="post-header">
@@ -134,5 +132,14 @@
         </div>
     </div>
     <script src="js/index.js"></script>
+    <script>
+        var app = angular.module('blogApp', []);
+        app.controller('blogCtrl', function($scope, $location, $http) {
+            var absUrl = $location.absUrl();
+            if(absUrl.indexOf("/") > 0) {
+                console.info(absUrl);
+            }
+        });
+    </script>
 </body>
 </html>

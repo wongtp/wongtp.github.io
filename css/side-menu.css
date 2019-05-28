@@ -223,26 +223,14 @@ small screens.
 
 .content {
     padding: 2em 1em 0;
-    margin: 0 auto;
-    max-width: 800px;
-    margin-bottom: 50px;
-    line-height: 1.6em;
 }
 
     .content-subhead {
-        text-transform: uppercase;
-        color: #aaa;
-        border-bottom: 1px solid #eee;
-        padding: 0.4em 0;
-        font-size: 80%;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        margin: 50px 0 20px 0;
-        color: #888;
+        border-bottom: 2px solid #eee;
     }
 
 .post {
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
     .post-title {
         font-size: 2em;

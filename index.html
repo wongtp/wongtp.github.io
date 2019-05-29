@@ -32,6 +32,32 @@
         </div>
         <div id="main" class="content pure-u-1 pure-u-md-3-4">
             <div>
+                <div class="posts" ng-repeat="item in dataList">
+                    <!-- A single blog post -->
+                    <section class="post">
+                        <header class="post-header">
+                            <h2 class="post-title"><a href="{{item.link}}">{{item.title}}</a></h2>
+                            <p class="post-meta">
+                                <a class="post-category post-category-design" href="#" ng-repeat="tag in item.tags">{{tag}}</a> 
+                                {{item.postTime}}
+                            </p>
+                        </header>
+    
+                        <div class="post-description">
+                            <p>
+                                {{item.summary}}
+                            </p>
+                            <div class="post-images pure-g" ng-if="item.imgs.length > 0" >
+                                <div class="pure-u-1 pure-u-md-1-2" ng-repeat="img in item.imgs">
+                                    <a href="{{img}}">
+                                        <img class="pure-img-responsive" src="{{img}}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
                 <!-- A wrapper for all the blog posts -->
                 <div class="posts">
                     <!-- A single blog post -->
@@ -132,9 +158,14 @@
         </div>
     </div>
     <script src="js/index.js"></script>
+    <script type="text/javascript" src="list/all/pageInfo.js"></script>
+    <script type="text/javascript" src="list/all/all-1.js"></script>
     <script>
         var app = angular.module('blogApp', []);
+        console.info(firstPage);
+        console.info(pageInfo);
         app.controller('blogCtrl', function($scope, $location, $http) {
+            $scope.dataList = firstPage;
             var absUrl = $location.absUrl();
             if(absUrl.indexOf("/") > 0) {
                 console.info(absUrl);

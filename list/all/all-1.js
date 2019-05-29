@@ -1,4 +1,4 @@
-[
+var firstPage = [
     {
         "title": "Linux 各文件夹用途说明",
         "tags": ["Linux", "Java"],
